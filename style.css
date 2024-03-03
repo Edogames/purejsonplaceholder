@@ -1,0 +1,230 @@
+*{
+    --Main-Color: rgb(255, 0, 234);
+    --Border-Color: purple;
+    --Border-Radius: 10px;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+html{
+    background: black;
+}
+
+header{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    display: block;
+    margin: auto;
+    background: black;
+    width: 90%;
+    padding: 0px 0;
+    overflow: hidden;
+    height: 10px;
+    border-radius: var(--Border-Radius);
+    border-bottom: 1px solid var(--Border-Color);
+    z-index: 99999999;
+
+    .border{
+        font-family: sans-serif;
+        transform: rotate(0deg);
+        position: relative;
+        bottom: 0px;
+        width: 90%;
+        display: block;
+        margin: auto;
+        z-index: 11;
+        border-radius: var(--Border-Radius);
+        color: var(--Main-Color);
+        text-align: center;
+    }
+    .content{
+        position: relative;
+        bottom: -10px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 90%;
+        padding: 10px 0;
+        border:2px var(--Border-Color);
+        border-style: dotted dashed solid double;
+        border-radius: var(--Border-Radius);
+    }
+}
+header:hover{
+    padding: 15px 0;
+    height: fit-content;
+
+    .border{
+        transform: rotate(180deg);
+        width: 100%;
+    }
+}
+
+.container{
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+.main{
+    border-radius: var(--Border-Radius);
+    background: rgba(26, 26, 26, 0.356);
+    min-width: 400px;
+    padding: 15px;
+    height: fit-content;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.post{
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    display: block;
+    background: black;
+    border-radius: var(--Border-Radius);
+    color: white;
+    padding: 10px;
+    margin: auto;
+    border: 4px dotted var(--Main-Color);
+    box-shadow: 0 0 10px black;
+
+    .title{
+        background: gray;
+        width: 90%;
+        border-radius: var(--Border-Radius);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 20px;
+        font-size: larger;
+        text-align: center;
+        margin: auto;
+        padding: 5px;
+    }
+    .body{
+        border-top: 2px solid var(--Border-Color);
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+.popup{
+    width: 90%;
+    background: rgba(0, 0, 0, 0.541);
+    border-radius: var(--Border-Radius);
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    #comments{
+        max-height: 70%;
+        width: 100%;
+        max-width: 400px;
+        background: rgba(0, 0, 0, 0.705);
+        display: block;
+        margin: auto;
+        padding: 10px;
+        border-radius: var(--Border-Radius);
+        border: 2px dashed var(--Border-Color);
+        overflow-y: auto;
+        .comment{
+            background: black;
+            border-radius: var(--Border-Radius);
+            border: 2px dashed var(--Border-Color);
+            color: white;
+            height: fit-content;
+            padding: 10px;
+            margin-bottom: 10px;
+    
+            .from{
+                border-bottom: 2px solid var(--Border-Color);
+                background: gray;
+                color: black;
+            }
+        }
+    }
+}
+
+.todo{
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    display: block;
+    background: black;
+    border-radius: var(--Border-Radius);
+    color: white;
+    padding: 10px;
+    margin: auto;
+    border: 4px dotted var(--Main-Color);
+    box-shadow: 0 0 10px black;
+
+    .title, .user{
+        background: gray;
+        width: 90%;
+        border-radius: var(--Border-Radius);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 20px;
+        font-size: larger;
+        text-align: left;
+        margin: auto;
+        padding: 5px;
+    }
+    .body{
+        border-top: 2px solid var(--Border-Color);
+        margin-top: 10px;
+        width: 100%;
+        color: white;
+        border-bottom: 2px solid var(--Border-Color);
+        padding-bottom: 10px;
+    }
+    .status{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    .progress{
+        background: yellow;
+    }
+    .complete{
+        background: green;
+    }
+}
+
+button{
+    transform: scale(1);
+    background: var(--Main-Color);
+    color: black;
+    padding: 10px;
+    border-radius: var(--Border-Radius);
+    border: 2px dotted var(--Border-Color);
+    font-size: large;
+    cursor: pointer;
+    z-index: 1;
+}
+button:hover{
+    transform: scale(1.2);
+}
+button:focus{
+    outline: none;
+    border-radius: var(--Border-Radius);
+    border: 2px dotted var(--Border-Color);
+}
+button:active{
+    transform: scale(0.9);
+    border-radius: var(--Border-Radius);
+    border: 2px dotted var(--Border-Color);
+}
+
+.d-flex{
+    display: flex;
+}
